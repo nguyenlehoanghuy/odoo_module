@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="object" model="object.tracking">
+            <field name="name">Object</field>
+        </record>
+        <record id="img" model="object.tracking">
+            <field name="name">Image</field>
+        </record>
+
+    </data>
+</odoo>

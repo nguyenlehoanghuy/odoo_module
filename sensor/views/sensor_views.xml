@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- views -->
+        <record id="sensors_form_view" model="ir.ui.view">
+            <field name="name">sensor.form</field>
+            <field name="model">sensor</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sensors_list_view" model="ir.ui.view">
+            <field name="name">sensors.list</field>
+            <field name="model">sensor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sensor_values_list_view" model="ir.ui.view">
+            <field name="name">sensor.values.list</field>
+            <field name="model">sensor.value</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sensor_id"/>
+                    <field name="value"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sensor_values_graph_view" model="ir.ui.view">
+            <field name="name">sensor.values.graph</field>
+            <field name="model">sensor.value</field>
+            <field name="arch" type="xml">
+                <graph string="Values" sample="1">
+                    <field name="value" type="measure"/>
+                    <field name="sensor_id"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="sensors_search_view" model="ir.ui.view">
+            <field name="name">sensors.search</field>
+            <field name="model">sensor</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="sensor_values_search_view" model="ir.ui.view">
+            <field name="name">sensor.values.search</field>
+            <field name="model">sensor.value</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="sensor_id"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- actions -->
+        <record model="ir.actions.act_window" id="sensors">
+            <field name="name">Sensors</field>
+            <field name="res_model">sensor</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="values">
+            <field name="name">Values</field>
+            <field name="res_model">sensor.value</field>
+            <field name="view_mode">tree,graph</field>
+        </record>
+
+        <record model="ir.actions.client" id="dashboard">
+            <field name="name">Dashboard</field>
+            <field name="tag">sensor.dashboard</field>
+        </record>
+
+        <!-- menu items -->
+        <menuitem name="Module-Sensor " id="sensor.menu_root" groups="base.group_user" web_icon="sensor,static/description/icon.png"/>
+        <menuitem name="Dashboard" id="sensor.dashboard_menu" parent="sensor.menu_root" action="sensor.dashboard" sequence="1"/>
+        <menuitem name="Sensors" id="sensor.sensor_menu" parent="sensor.menu_root" action="sensor.sensors" sequence="2"/>
+        <menuitem name="Values" id="sensor.value_menu" parent="sensor.menu_root" action="sensor.values" sequence="3"/>
+    </data>
+</odoo>
+

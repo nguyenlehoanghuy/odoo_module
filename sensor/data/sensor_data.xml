@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="sensor_1" model="sensor">
+            <field name="name">Temperature</field>
+        </record>
+        <record id="sensor_2" model="sensor">
+            <field name="name">Dissolved oxygen</field>
+        </record>
+        <record id="sensor_3" model="sensor">
+            <field name="name">pH</field>
+        </record>
+
+    </data>
+</odoo>

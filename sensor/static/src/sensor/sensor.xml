@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="sensor.sensors" owl="1">
+        <p>Name: <t t-esc="tmp.name"/>
+        </p>
+        <p>Value: <t t-esc="tmp.value"/>
+        </p>
+        <p>Name: <t t-esc="odo.name"/>
+        </p>
+        <p>Value: <t t-esc="odo.value"/>
+        </p>
+        <p>Name: <t t-esc="fph.name"/>
+        </p>
+        <p>Value: <t t-esc="fph.value"/>
+        </p>
+    </t>
+
+</templates>

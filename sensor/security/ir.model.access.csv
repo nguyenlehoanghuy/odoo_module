@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sensor,access_sensor,model_sensor,base.group_user,1,1,1,1
+access_sensor_value,access_sensor_value,model_sensor_value,base.group_user,1,1,1,1
